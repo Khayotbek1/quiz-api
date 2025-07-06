@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from users import serializers
-from .users.models import User
+from rest_framework import serializers
+from users.models import User
 from .models import *
 
 
@@ -23,7 +23,7 @@ class QuestionSerializer(serializers.ModelSerializer):
         fields = ['id', 'text', 'options']
 
 
-class QuizCreateSerializer(serializers.ModelSerializerr):
+class QuizCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Quiz
         fields = ['id', 'title', 'allowed_students', 'is_active']
